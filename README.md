@@ -61,7 +61,9 @@ If no recognized module system is present, access bundle contents via the global
 ```html
 <script type="text/javascript">
 (function () {
+(function () {
     window.smskmap;
+})();
 })();
 </script>
 ```
@@ -196,6 +198,7 @@ smskmap.ndarray( 3, x, 2, 1, m, 2, 1, y, -1, y.length-1, absf );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
+(function () {
 
 function scale( x ) {
     return x * 10.0;
@@ -217,6 +220,7 @@ console.log( y );
 smskmap.ndarray( x.length, x, 1, 0, m, 1, 0, y, -1, y.length-1, scale );
 console.log( y );
 
+})();
 })();
 </script>
 </body>
@@ -308,9 +312,9 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/strided-base-smskmap/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd/tree/umd
 
-[@stdlib/array/uint8]: https://github.com/stdlib-js/array-uint8/tree/umd
+[@stdlib/array/uint8]: https://github.com/stdlib-js/array-uint8/tree/umd/tree/umd
 
 </section>
 
