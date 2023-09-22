@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/strided-base-smskmap",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Apply a unary function to a single-precision floating-point strided input array according to a strided mask array and assign results to a single-precision floating-point strided output array.",
   "license": "Apache-2.0",
   "author": {
@@ -39,19 +39,19 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.0.7",
-    "@stdlib/utils-library-manifest": "^0.0.8"
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.1.0",
+    "@stdlib/utils-library-manifest": "^0.1.0"
   },
   "devDependencies": {
     "@stdlib/array-float32": "^0.0.6",
     "@stdlib/array-uint8": "^0.0.7",
-    "@stdlib/bench": "^0.0.12",
+    "@stdlib/bench": "^0.1.0",
     "@stdlib/math-base-assert-is-nanf": "^0.0.8",
     "@stdlib/math-base-special-absf": "^0.0.6",
     "@stdlib/math-base-special-floor": "^0.0.8",
     "@stdlib/math-base-special-identityf": "^0.0.8",
     "@stdlib/math-base-special-pow": "^0.0.7",
-    "@stdlib/math-base-special-round": "^0.0.7",
+    "@stdlib/math-base-special-round": "^0.1.0",
     "@stdlib/random-base-bernoulli": "^0.0.6",
     "@stdlib/random-base-randu": "^0.0.8",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
