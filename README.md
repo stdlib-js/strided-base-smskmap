@@ -43,30 +43,38 @@ limitations under the License.
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/strided-base-smskmap
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var smskmap = require( '@stdlib/strided-base-smskmap' );
+smskmap = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var smskmap = require( 'path/to/vendor/umd/strided-base-smskmap/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.smskmap;
+})();
+</script>
 ```
 
 #### smskmap( N, x, strideX, mask, strideMask, y, strideY, fcn )
@@ -187,13 +195,18 @@ smskmap.ndarray( 3, x, 2, 1, m, 2, 1, y, -1, y.length-1, absf );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var round = require( '@stdlib/math-base-special-round' );
-var randu = require( '@stdlib/random-base-randu' );
-var bernoulli = require( '@stdlib/random-base-bernoulli' );
-var Float32Array = require( '@stdlib/array-float32' );
-var Uint8Array = require( '@stdlib/array-uint8' );
-var smskmap = require( '@stdlib/strided-base-smskmap' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 function scale( x ) {
     return x * 10.0;
@@ -214,6 +227,11 @@ console.log( y );
 
 smskmap.ndarray( x.length, x, 1, 0, m, 1, 0, y, -1, y.length-1, scale );
 console.log( y );
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -222,129 +240,7 @@ console.log( y );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/strided/base/smskmap.h"
-```
-
-#### stdlib_strided_smskmap( N, \*X, strideX, \*Mask, strideMask, \*Y, strideY, fcn )
-
-Applies a unary function to a single-precision floating-point strided input array according to a strided mask array and assigns results to a single-precision floating-point strided output array.
-
-```c
-#include <stdint.h>
-
-static float scale( const float x ) {
-    return x * 10.0f;
-}
-
-float X[] = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f };
-uint8_t M[] = { 0, 0, 1, 0, 0, 1 };
-float Y[] = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-
-int64_t N = 6;
-
-stdlib_strided_smskmap( N, X, 1, M, 1, Y, 1, scale );
-```
-
-The function accepts the following arguments:
-
--   **N**: `[in] int64_t` number of indexed elements.
--   **X**: `[in] float*` input array.
--   **strideX** `[in] int64_t` index increment for `X`.
--   **Mask**: `[in] uint8_t*` mask array.
--   **strideMask**: `[in] int64_t` index increment for `Mask`.
--   **Y**: `[out] float*` output array.
--   **strideY**: `[in] int64_t` index increment for `Y`.
--   **fcn**: `[in] float (*fcn)( float )` unary function to apply.
-
-```c
-void stdlib_strided_smskmap( const int64_t N, const float *X, const int64_t strideX, const uint8_t *Mask, const int64_t strideMask, float *Y, const int64_t strideY, float (*fcn)( float ) );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/strided/base/smskmap.h"
-#include <stdint.h>
-#include <stdio.h>
-#include <inttypes.h>
-
-// Define a callback:
-static float scale( const float x ) {
-    return x * 10.0f;
-}
-
-int main( void ) {
-    // Create an input strided array:
-    float X[] = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f };
-
-    // Create a mask strided array:
-    uint8_t M[] = { 0, 0, 1, 0, 0, 1 };
-
-    // Create an output strided array:
-    float Y[] = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-
-    // Specify the number of elements:
-    int64_t N = 6;
-
-    // Define the strides:
-    int64_t strideX = 1;
-    int64_t strideM = 1;
-    int64_t strideY = -1;
-
-    // Apply the callback:
-    stdlib_strided_smskmap( N, X, strideX, M, strideM, Y, strideY, scale );
-
-    // Print the results:
-    for ( int64_t i = 0; i < N; i++ ) {
-        printf( "Y[ %"PRId64" ] = %f\n", i, Y[ i ] );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -423,9 +319,9 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/strided-base-smskmap/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd
 
-[@stdlib/array/uint8]: https://github.com/stdlib-js/array-uint8
+[@stdlib/array/uint8]: https://github.com/stdlib-js/array-uint8/tree/umd
 
 </section>
 
