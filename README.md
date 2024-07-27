@@ -50,13 +50,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import smskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@esm/index.mjs';
+import smskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@v0.2.2-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@esm/index.mjs';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@v0.2.2-esm/index.mjs';
 ```
 
 #### smskmap( N, x, strideX, mask, strideMask, y, strideY, fcn )
@@ -188,7 +188,7 @@ import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/i
 import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@esm/index.mjs';
 import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
 import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import smskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@esm/index.mjs';
+import smskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smskmap@v0.2.2-esm/index.mjs';
 
 function scale( x ) {
     return x * 10.0;
