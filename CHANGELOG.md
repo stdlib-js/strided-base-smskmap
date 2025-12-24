@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-10-17)
+## Unreleased (2025-12-24)
 
 <section class="issues">
 
@@ -24,6 +24,7 @@ A total of 2 issues were closed in this release:
 
 <details>
 
+-   [`cb25fd3`](https://github.com/stdlib-js/stdlib/commit/cb25fd3db4f30a7fc4ab5fe9bb4acf12d648004b) - **bench:** refactor to use dynamic memory allocation in `strided/base/smskmap` [(#9351)](https://github.com/stdlib-js/stdlib/pull/9351) _(by Omar Mohamed, Athan Reines)_
 -   [`1260ab1`](https://github.com/stdlib-js/stdlib/commit/1260ab1675b1bf6709fc948c8c9fbdee988dd968) - **chore:** fix C lint errors [(#8252)](https://github.com/stdlib-js/stdlib/pull/8252) _(by Geo Daoyu)_
 -   [`26f5797`](https://github.com/stdlib-js/stdlib/commit/26f5797c30ac9fbdb8a5d11e3dc58ae71813ab0f) - **chore:** fix EditorConfig lint errors [(#7099)](https://github.com/stdlib-js/stdlib/pull/7099) _(by Lalit Narayan Yadav)_
 -   [`74b15bb`](https://github.com/stdlib-js/stdlib/commit/74b15bba6c22bcdd23d61a4e8996a59c7ef0f041) - **refactor:** update paths _(by Gururaj Gurram)_
@@ -41,12 +42,13 @@ A total of 2 issues were closed in this release:
 
 ### Contributors
 
-A total of 5 people contributed to this release. Thank you to the following contributors:
+A total of 6 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Geo Daoyu
 -   Gururaj Gurram
 -   Lalit Narayan Yadav
+-   Omar Mohamed
 -   Philipp Burckhardt
 
 </section>
