@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/strided-base-smskmap",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Apply a unary function to a single-precision floating-point strided input array according to a strided mask array and assign results to a single-precision floating-point strided output array.",
   "license": "Apache-2.0",
   "author": {
@@ -40,8 +40,8 @@
   },
   "dependencies": {
     "@stdlib/strided-base-stride2offset": "^0.1.0",
-    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.2",
-    "@stdlib/utils-library-manifest": "^0.2.2"
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.3",
+    "@stdlib/utils-library-manifest": "^0.2.3"
   },
   "devDependencies": {
     "@stdlib/array-float32": "^0.2.2",
@@ -51,9 +51,9 @@
     "@stdlib/math-base-special-floor": "^0.2.3",
     "@stdlib/math-base-special-pow": "^0.3.0",
     "@stdlib/math-base-special-round": "^0.3.0",
-    "@stdlib/number-float32-base-identity": "github:stdlib-js/number-float32-base-identity#main",
+    "@stdlib/number-float32-base-identity": "^0.1.0",
     "@stdlib/random-base-bernoulli": "^0.2.1",
-    "@stdlib/random-base-randu": "^0.2.1",
+    "@stdlib/random-base-randu": "^0.2.2",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
     "istanbul": "^0.4.1",
     "tap-min": "git+https://github.com/Planeshifter/tap-min.git",
@@ -96,7 +96,6 @@
     "missing values",
     "na"
   ],
-  "__stdlib__": {},
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/stdlib"
